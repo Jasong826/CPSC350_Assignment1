@@ -1,0 +1,26 @@
+Jason Song
+ID: 2327590
+Email: Jasong@chapman.edu
+Sum: 32
+Mean: 10
+-----------------------------------------------------------------
+Probability of A: %25
+Probability of C: %18.75
+Probability of G: %18.75
+Probability of T: %28.125
+Probability of AA: %0
+Probability of AC: %9.375
+Probability of AG: %3.125
+Probability of AT: %9.375
+Probability of CA: %0
+Probability of CC: %0
+Probability of CG: %9.375
+Probability of CT: %6.25
+Probability of GA: %0
+Probability of GC: %6.25
+Probability of GG: %0
+Probability of GT: %9.375
+Probability of TA: %15.625
+Probability of TC: %3.125
+Probability of TG: %6.25
+Probability of TT: %3.125

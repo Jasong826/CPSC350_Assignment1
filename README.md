@@ -3,3 +3,4 @@
 
 work cited
 https://www.learncpp.com/cpp-tutorial/186-basic-file-io/
+http://www.cplusplus.com/articles/EywTURfi/

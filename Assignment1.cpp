@@ -65,8 +65,8 @@ int main(int argc, char** argv)
 
 
 while(true){
-  //checks if there in an input for fileName
 
+  //checks if there in an input for fileName
   if (argc>0)
   {
     cout << "opening and reading: " << fileName << endl;
@@ -75,23 +75,18 @@ while(true){
   else
   {
     cout << "No argument provided in the command line! Please try again!" << endl;
+    exit(1);
   }
 
-  //reads the file
+  //reads the dna strings in the file
   while (true)
   {
-
     string line  = "";
     getline(dnaFile, line);
-
     //get size of the string
     strSize = line.size();
     //cout << "reading line" << endl;
-
     //go through the line to count for nucleotides and bigrams
-
-
-    //iterates through each character in the line to count how many times each nucleotide appears
     for(int i = 0; i < strSize; ++i)  {
       charCount ++;
       if (line[i] == 'A' || line[i] == 'a')
@@ -143,21 +138,16 @@ while(true){
           TT_Count ++;
       }
     }
-
-
     //stop when reached end of the file
     if (strSize == 0)
     {
-      cout << "Stopped reading file because encountered a line with zero characters!" << endl;
+      //cout << "Stopped reading file because encountered a line with zero characters!" << endl;
       break;
     }
-
-
     //increment the count of lines in the file
     lineCount ++;
     //adding up number of length of strings
     sum = strSize + sum;
-
     //printing out results
     /*
     cout << "line: " << line << endl;
@@ -171,14 +161,10 @@ while(true){
   }
 
   dnaFile.close();
-
   //calculate mean of the size of strings
   mean = sum/lineCount;
-
   //reopen file to calc variance
   dnaFile.open(fileName);
-
-
   int total = 0;
   //calculate variance and standard Deviation
   for(int i = 0; i < lineCount; ++i)
@@ -253,8 +239,6 @@ while(true){
   outputFile << "Probability of TG: %" << TG_prob << endl;
   outputFile << "Probability of TT: %" << TT_prob << endl;
 
-
-
   for(int k = 0; k < 1000; ++k)
   {
     //initialize to use formulas that were provided in the pdf file
@@ -265,15 +249,13 @@ while(true){
 
     string dnaStrand = "";
 
-
     //generate random number from 0 - 32767
     a = rand() % RAND_MAX;
     b = rand() % RAND_MAX;
-
     //divide the random number by 32767 to get a number in between 0 and 1
     a = a / RAND_MAX;
     b = b / RAND_MAX;
-    //calculate for random lengths
+    //calculate for random lengths of dna strings
     c = sqrt(-2 * log(a)) * cos(2 * M_PI * b);
     d = stDev * c + mean;
     //cout << a << " " << b << " " << c << " " << d << endl;
